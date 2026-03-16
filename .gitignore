@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# CSharp
+**/obj/
+**/bin/
+**/plantuml/
+**/toc.yaml
+**/_site/
+**/api/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
