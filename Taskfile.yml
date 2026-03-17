@@ -16,9 +16,9 @@ tasks:
   create-src-dirs:
     desc: "Creates the src directory structure if they do not exist"
     cmds:
-      - mkdir -p kmom01/{practice} kmom02/{practice} kmom03/{practice} kmom04/{practice} kmom05/{practice}
+      - mkdir -p kmom01/{practice} kmom02/{practice} kmom03/{practice} kmom04/{practice} kmom05/{practice} kmom06/{practice} kmom07/{practice} kmom10
       - echo "Source directories created successfully. PS empty directories are not shown with 'git status'."
-      - tree -d src
+      - tree -d .
 
   download-artifacts:
     desc: "Downloads the artifacts repo to /tmp/tmp-artifacts"
@@ -123,7 +123,7 @@ tasks:
         fi
 
         # ── Check: required branches exist (local or remote) ──────────────────
-        for BRANCH in "bth/submit/kmom03" "bth/submit/test-gitconfig"; do
+        for BRANCH in "bth/submit/kmom03"; do
           LOCAL_BRANCH=$(git show-ref --verify --quiet "refs/heads/$BRANCH" && echo "yes" || echo "no")
           REMOTE_BRANCH=$(git ls-remote --heads origin "$BRANCH" 2>/dev/null | grep -c "$BRANCH" || true)
           if [ "$LOCAL_BRANCH" = "yes" ] && [ "$REMOTE_BRANCH" -gt 0 ]; then
