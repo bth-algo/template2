@@ -1,4 +1,6 @@
 {
+    "dotnet.defaultSolution": "",
+    "dotnet.autoCreateSolution": false,
     "github.copilot.enable": {
     "*": false
     },
