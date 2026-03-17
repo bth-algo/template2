@@ -8,6 +8,7 @@ node_modules
 **/toc.yaml
 **/_site/
 **/api/
+**/*.sln
 
 # macOS
 .DS_Store
