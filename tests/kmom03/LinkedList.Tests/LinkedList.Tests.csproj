@@ -20,14 +20,4 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\kmom01\Searching\Searching.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="TestData\*.*">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup> 
-
 </Project>

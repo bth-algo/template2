@@ -23,8 +23,8 @@ jobs:
   call-on-open-pr:
     uses: bth-algo/utils2/.github/workflows/on_open_pr.yml@main
     with:
-      course_id: ${{ vars.COURSE_ID }}
-      available_assignments: ${{ vars.ASSIGNMENTS }}
-      kmom_paths: ${{ vars.KMOM_PATHS }}
+      course_id: ${{ vars.COURSE_ID2 }}
+      available_assignments: ${{ vars.ASSIGNMENTS2 }}
+      kmom_paths: ${{ vars.KMOM_PATHS2 }}
       tags: ${{ vars.TAGS }}
     secrets: inherit

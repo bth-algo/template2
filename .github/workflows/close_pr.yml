@@ -21,6 +21,6 @@ jobs:
     if: github.event.pull_request.merged == false
     uses: bth-algo/utils2/.github/workflows/on_close_pr.yml@main
     with:
-      course_id: ${{ vars.COURSE_ID }}
-      available_assignments: ${{ vars.ASSIGNMENTS }}
+      course_id: ${{ vars.COURSE_ID2 }}
+      available_assignments: ${{ vars.ASSIGNMENTS2 }}
     secrets: inherit

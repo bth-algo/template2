@@ -25,5 +25,5 @@ jobs:
   call-on-tag:
     uses: bth-algo/utils2/.github/workflows/on_tag.yml@main
     with:
-      kmom_paths: ${{ vars.KMOM_PATHS }}
+      kmom_paths: ${{ vars.KMOM_PATHS2 }}
     secrets: inherit

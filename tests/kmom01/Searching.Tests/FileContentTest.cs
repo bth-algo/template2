@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 [TestFixture]
 public class FileContentTest
 {
-    private const string ORDERED_WORDS_999 = @"TestData/orderedWords999.txt";
-    private const string ORDERED_WORDS_1200 = @"TestData/orderedWords1200.txt";
-    private const string WORDS_999 = @"TestData/words999.txt";
-    private const string WORDS_1200 = @"TestData/words1200.txt";
+    private const string ORDERED_WORDS_999 = @"orderedWords999.txt";
+    private const string ORDERED_WORDS_1200 = @"orderedWords1200.txt";
+    private const string WORDS_999 = @"words999.txt";
+    private const string WORDS_1200 = @"words1200.txt";
     private string _testDirectory = "";
     private string _targetDir = "";
 
@@ -22,13 +22,13 @@ public class FileContentTest
         if (!string.IsNullOrEmpty(workflowDir))
         {
             // Körs i GitHub Actions
-            _targetDir = Path.Combine(workflowDir, "kmom01", "Searching.Tests") ?? "";
+            _targetDir = Path.Combine(workflowDir, "kmom01", "Searching") ?? "";
         }
         else
         {
             var testDir = TestContext.CurrentContext.TestDirectory;
-            var rootDir = Path.GetFullPath(Path.Combine(testDir, "..", "..", "..", ".."));
-            this._targetDir = Path.Combine(rootDir, "Searching.Tests") ?? "";
+            var rootDir = Path.GetFullPath(Path.Combine(testDir, "..", "..", "..", "..", "..", ".."));
+            this._targetDir = Path.Combine(rootDir, "kmom01", "Searching") ?? "";
         }
     }
 

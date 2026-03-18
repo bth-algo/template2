@@ -20,7 +20,7 @@ jobs:
   call-on-label:
     uses: bth-algo/utils2/.github/workflows/on_label.yml@main
     with:
-      course_id: ${{ vars.COURSE_ID }}
-      available_assignments: ${{ vars.ASSIGNMENTS }}
-      kmom_paths: ${{ vars.KMOM_PATHS }}
+      course_id: ${{ vars.COURSE_ID2 }}
+      available_assignments: ${{ vars.ASSIGNMENTS2 }}
+      kmom_paths: ${{ vars.KMOM_PATHS2 }}
     secrets: inherit
