@@ -1,5 +1,5 @@
 ﻿
-﻿namespace Sorting.Tests;
+﻿namespace Sorting;
 
 using System.IO.Enumeration;
 using Sorting;

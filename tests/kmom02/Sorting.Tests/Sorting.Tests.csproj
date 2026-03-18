@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Sorting\Sorting.csproj" />
+    <ProjectReference Include="..\..\..\kmom02\Sorting\Sorting.csproj" />
   </ItemGroup>
 
 
