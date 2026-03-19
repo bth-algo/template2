@@ -32,13 +32,6 @@ public class FileContentTest
         }
     }
 
-    [OneTimeTearDown]
-    public void TearDownAfterTests()
-    {
-        var directoryPath = Path.Combine(_testDirectory, "TestData");
-        Directory.Delete(directoryPath, true);
-    }
-
     [TestCase(ORDERED_WORDS_999, 999)]
     [TestCase(ORDERED_WORDS_1200, 1200)]
     [TestCase(WORDS_999, 999)]
