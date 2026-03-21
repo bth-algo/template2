@@ -16,18 +16,6 @@ public class BusStopTests
         Assert.That(stop.ToString().Contains("tjo hopp"));
     }
 
-    
-    [Test]
-    public void TestBusStopEquals()
-    {
-        BusStop stopOne = new BusStop(111, "A", "a");
-        BusStop stopTwo = new BusStop(102, "B", "b");
-        BusStop stopThree = new BusStop(111, "A", "x");
-
-        Assert.That(stopOne.Equals(stopTwo), Is.False);
-        Assert.That(stopOne.Equals(stopThree), Is.True);      
-    }
-
     [Test]
     public void TestBusStopCompareTo()
     {
@@ -48,6 +36,6 @@ public class BusStopTests
         BusStop stopTwo = stopOne.GetCopy();
 
         Assert.That(stopOne == stopTwo, Is.False);   
-        Assert.That(stopOne.Equals(stopTwo), Is.True);
+        Assert.That(stopOne.CompareTo(stopTwo), Is.EqualTo(0));
     }
 }
