@@ -3,7 +3,7 @@ using Searching;
 
 public class BusStopTests
 {
-    [SetUp]
+        [SetUp]
     public void Setup()
     {
     }
@@ -14,6 +14,7 @@ public class BusStopTests
         Assert.That(stop.ToString().Contains("111"));
         Assert.That(stop.ToString().Contains("Halmstad"));
         Assert.That(stop.ToString().Contains("tjo hopp"));
+        TestContext.Out.WriteLine($"✅ ToString() ok in BusStop");
     }
 
     [Test]
@@ -26,6 +27,7 @@ public class BusStopTests
         Assert.That(stopOne.CompareTo(stopTwo), Is.EqualTo(-1));
         Assert.That(stopTwo.CompareTo(stopOne), Is.EqualTo(1));
         Assert.That(stopOne.CompareTo(stopThree), Is.EqualTo(0));
+        TestContext.Out.WriteLine($"✅ CompareTo() ok in BusStop");
 
     }
 
@@ -37,5 +39,6 @@ public class BusStopTests
 
         Assert.That(stopOne == stopTwo, Is.False);   
         Assert.That(stopOne.CompareTo(stopTwo), Is.EqualTo(0));
+        TestContext.Out.WriteLine($"✅ GetCopy() ok in BusStop");
     }
 }

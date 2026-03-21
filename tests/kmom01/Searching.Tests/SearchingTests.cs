@@ -13,6 +13,8 @@ public class SearchingTests
         Assert.That(unOrderedNrs.Length, Is.EqualTo(indexes.Count));
         for (int i=0; i<10; i++)
             Assert.That(i, Is.EqualTo(indexes[i]));
+        TestContext.Out.WriteLine($"✅ LinearSearch worst case small array");
+
     }
     [Test]
     public void TestLinearSearchUnorderedNumbersBestCaseSmallArray()
@@ -23,6 +25,7 @@ public class SearchingTests
         Assert.That(index, Is.EqualTo(0));
         Assert.That(indexes.Count, Is.EqualTo(1));
         Assert.That(indexes[0], Is.EqualTo(0));
+        TestContext.Out.WriteLine($"✅ LinearSearch best case small array");
     }
 
     [Test]
@@ -35,6 +38,7 @@ public class SearchingTests
         Assert.That(indexes.Count, Is.EqualTo(46));
         for (int i=0; i<=45; i++)
             Assert.That(i, Is.EqualTo(indexes[i]));
+        TestContext.Out.WriteLine($"✅ LinearSearch ok");
     }
 
     [Test]
@@ -48,6 +52,7 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{7, 11, 13, 14, 15};
         for (int i=0; i<5; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
+        TestContext.Out.WriteLine($"✅ BinarySearch worst case test 01 small array");
     }
 
     [Test]
@@ -61,6 +66,7 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{7, 3, 1, 0};
         for (int i=0; i<4; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
+        TestContext.Out.WriteLine($"✅ BinarySearch worst case test 02 small array");
     }
 
     [Test]
@@ -76,6 +82,7 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{511, 255, 127, 63, 31, 47, 39, 35, 37, 38};
         for (int i=0; i<indexes.Count; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
+        TestContext.Out.WriteLine($"✅ BinarySearch worst case array");
     }
     [Test]
     public void TestBinarySearchBestCase()
@@ -90,6 +97,7 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{511};
         for (int i=0; i<indexes.Count; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
+        TestContext.Out.WriteLine($"✅ BinarySearch best case");
     }
     [Test]
     public void TestBinarySearch01()
@@ -104,6 +112,7 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{511, 767, 639, 703, 671, 687, 695, 699, 701};
         for (int i=0; i<expectedIndexes.Length; i++)
             Assert.That(indexes[i], Is.EqualTo(expectedIndexes[i]));
+        TestContext.Out.WriteLine($"✅ BinarySearch test 01");
     }
 
     [Test]
@@ -119,5 +128,6 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{511, 767};
         for (int i=0; i<expectedIndexes.Length; i++)
             Assert.That(indexes[i], Is.EqualTo(expectedIndexes[i]));
+        TestContext.Out.WriteLine($"✅ BinarySearch test 02");
     }
 }
