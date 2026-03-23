@@ -12,7 +12,7 @@ public class BusStopTests
         Assert.That(busStop.ToString().Contains("42"));
         Assert.That(busStop.ToString().Contains("Central"));
         Assert.That(busStop.ToString().Contains("Near station"));
-        TestContext.Out.WriteLine($"✅ ToString() in BusStop");
+        TestContext.Out.WriteLine($"✅ BusStop: ToString() contains all properties");
     }
 
     [Test]
@@ -24,7 +24,7 @@ public class BusStopTests
         var result = stopA.CompareTo(stopB);
 
         Assert.That(result, Is.LessThan(0));
-        TestContext.Out.WriteLine($"✅ CompareTo() return < 0 when less than");
+        TestContext.Out.WriteLine($"✅ BusStop: CompareTo() return < 0 when less than");
     }
 
     [Test]
@@ -36,7 +36,7 @@ public class BusStopTests
         var result = stopA.CompareTo(stopB);
 
         Assert.That(result, Is.GreaterThan(0));
-        TestContext.Out.WriteLine($"✅ CompareTo() return > 0 when bigger than");
+        TestContext.Out.WriteLine($"✅ BusStop: CompareTo() return > 0 when bigger than");
     }
 
     [Test]
@@ -48,7 +48,7 @@ public class BusStopTests
         var result = stopA.CompareTo(stopB);
 
         Assert.That(result, Is.EqualTo(0));
-        TestContext.Out.WriteLine($"✅ CompareTo() return 0 when same");
+        TestContext.Out.WriteLine($"✅ BusStop: CompareTo() return 0 when same");
     }
 
 
@@ -64,6 +64,6 @@ public class BusStopTests
         Assert.That(copy.GetNr(), Is.EqualTo(original.GetNr()));
         Assert.That(copy.GetName(), Is.EqualTo(original.GetName()));
         Assert.That(copy.GetNote(), Is.EqualTo(original.GetNote()));
-        TestContext.Out.WriteLine($"✅ GetCopy() returns a correct copy");
+        TestContext.Out.WriteLine($"✅ BusStop: GetCopy() returns a correct copy");
     }
 }

@@ -3,10 +3,20 @@ using Searching;
 
 public class SearchingTests
 {
-    [Test]
-    public void TestLinearSearchUnorderedNumbersWorstCaseSmallArray()
+    public static int[] RandomOrderedNumbers(int minValue, int maxValue, int nrOf, int seed = 1234)
     {
-        int[] unOrderedNrs = HelperMethods.RandomOrderedNumbers(1, 300, 10, 100);
+        Random random = new Random(seed);
+
+        int[] nrs = new int[nrOf];
+        for (int i = 0; i<nrOf; i++)
+            nrs[i] = random.Next(minValue, maxValue + 1);
+        Array.Sort(nrs);
+        return nrs;
+    }
+    [Test]
+    public void LinearSearch_UnorderedNumbers_WorstCaseSmallArray()
+    {
+        int[] unOrderedNrs = RandomOrderedNumbers(1, 300, 10, 100);
         List<int> indexes = new List<int>();
         int index = SearchAlgorithms.LinearSearch(unOrderedNrs, 10, 888, indexes);
         Assert.That(index, Is.EqualTo(-1));
@@ -17,9 +27,9 @@ public class SearchingTests
 
     }
     [Test]
-    public void TestLinearSearchUnorderedNumbersBestCaseSmallArray()
+    public void LinearSearch_UnorderedNumbers_BestCaseSmallArray()
     {
-        int[] unOrderedNrs = HelperMethods.RandomOrderedNumbers(1, 300, 10, 55);
+        int[] unOrderedNrs = RandomOrderedNumbers(1, 300, 10, 55);
         List<int> indexes = new List<int>();
         int index = SearchAlgorithms.LinearSearch(unOrderedNrs, 10, 11, indexes);
         Assert.That(index, Is.EqualTo(0));
@@ -29,9 +39,9 @@ public class SearchingTests
     }
 
     [Test]
-    public void TestLinearSearchUnorderedNumbers()
+    public void LinearSearch_UnorderedNumbers()
     {
-        int[] unOrderedNrs = HelperMethods.RandomOrderedNumbers(1, 300, 100, 55);
+        int[] unOrderedNrs = RandomOrderedNumbers(1, 300, 100, 55);
         List<int> indexes = new List<int>();
         int index = SearchAlgorithms.LinearSearch(unOrderedNrs, 100, 133, indexes);
         Assert.That(index, Is.EqualTo(45));
@@ -42,7 +52,7 @@ public class SearchingTests
     }
 
     [Test]
-    public void TestBinarySearchWorstCaseSmallArray01()
+    public void BinarySearch_WorstCaseSmallArray01()
     {
         int[] nrs = new int[]{10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85};
         List<int> indexes = new List<int>();
@@ -52,11 +62,11 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{7, 11, 13, 14, 15};
         for (int i=0; i<5; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
-        TestContext.Out.WriteLine($"✅ BinarySearch worst case test 01 small array");
+        TestContext.Out.WriteLine($"✅ BinarySearch worst case searching for element bigger than the biggest in the array");
     }
 
     [Test]
-    public void TestBinarySearchWorstCaseSmallArray02()
+    public void BinarySearch_WorstCaseSmallArray02()
     {
         int[] nrs = new int[]{10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85};
         List<int> indexes = new List<int>();
@@ -66,11 +76,11 @@ public class SearchingTests
         int[] expectedIndexes = new int[]{7, 3, 1, 0};
         for (int i=0; i<4; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
-        TestContext.Out.WriteLine($"✅ BinarySearch worst case test 02 small array");
+        TestContext.Out.WriteLine($"✅ BinarySearch worst case test searching for an element that is smaller than the smallest in the array");
     }
 
     [Test]
-    public void TestBinarySearchWorstCase03()
+    public void BinarySearch_WorstCase()
     {
         int[] nrs = new int[1024];
         for (int i=0; i<1024; i++)
@@ -85,7 +95,7 @@ public class SearchingTests
         TestContext.Out.WriteLine($"✅ BinarySearch worst case array");
     }
     [Test]
-    public void TestBinarySearchBestCase()
+    public void BinarySearch_BestCase()
     {
         int[] nrs = new int[1024];
         for (int i=0; i<1024; i++)
@@ -100,7 +110,7 @@ public class SearchingTests
         TestContext.Out.WriteLine($"✅ BinarySearch best case");
     }
     [Test]
-    public void TestBinarySearch01()
+    public void BinarySearch01()
     {
         int[] nrs = new int[1024];
         for (int i=0; i<1024; i++)
@@ -116,7 +126,7 @@ public class SearchingTests
     }
 
     [Test]
-    public void TestBinarySearch02()
+    public void BinarySearch02()
     {
         int[] nrs = new int[1024];
         for (int i=0; i<1024; i++)
