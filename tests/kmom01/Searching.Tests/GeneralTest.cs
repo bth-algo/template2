@@ -39,9 +39,6 @@ public class GeneralTest
             "Program.cs",
             "SearchAlgorithms.cs",
             "BusStop.cs",
-            "words999.txt",
-            "orderedWords999.txt",
-            "words1200.txt",
             "orderedWords1200.txt",
         };
 
