@@ -1,14 +1,20 @@
-This repo is used as development repo for setting up a workflow for a college course.
+# Kursrepo för kursen algo
 
-Students should have The Workflow:
+Välkommen till mitt kursrepo för algo-kursen!
 
-    Assignment 1:
-        Branch: kmom01 from main.
-        Will write code in src/kmom01 folder.
 
-    Assignment 2:
-        Branch: kmom02 from kmom01 (or from main after assignment 1 is merged)
-        Will write code in src/kmom02 folder.
+## Om mig
 
-    If student needs to fix assignment 1 while working on assignment 2:
-        Fix in kmom01
+_Frivilligt_
+
+Testar README.
+
+Skriv gärna ett kort stycke om dig själv (eller om ditt påhittade student-alter ego), inkludera en relevant bild (bara så du lär dig att hantera bilder i Markdown).
+
+
+
+## Om datastrukturer och algoritmer
+
+_Frivilligt_
+
+Skriv kort om du använt datastrukturer och algoritmer sedan tidigare i någon omfattning och vilka förväntningar du har på kursen och på databaser i ditt framtida yrkesliv.
