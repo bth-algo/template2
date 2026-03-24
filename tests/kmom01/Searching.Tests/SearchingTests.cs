@@ -3,20 +3,20 @@ using Searching;
 
 public class SearchingTests
 {
-    public static int[] RandomOrderedNumbers(int minValue, int maxValue, int nrOf, int seed = 1234)
+    public static int[] RandomNumbers(int minValue, int maxValue, int nrOf, int seed = 1234)
     {
         Random random = new Random(seed);
 
         int[] nrs = new int[nrOf];
         for (int i = 0; i<nrOf; i++)
             nrs[i] = random.Next(minValue, maxValue + 1);
-        Array.Sort(nrs);
+        //Array.Sort(nrs);
         return nrs;
     }
     [Test]
     public void LinearSearch_UnorderedNumbers_WorstCaseSmallArray()
     {
-        int[] unOrderedNrs = RandomOrderedNumbers(1, 300, 10, 100);
+        int[] unOrderedNrs = RandomNumbers(1, 300, 10, 100);
         List<int> indexes = new List<int>();
         int index = SearchAlgorithms.LinearSearch(unOrderedNrs, 10, 888, indexes);
         Assert.That(index, Is.EqualTo(-1));
@@ -27,11 +27,11 @@ public class SearchingTests
 
     }
     [Test]
-    public void LinearSearch_UnorderedNumbers_BestCaseSmallArray()
+    public void LinearSearch_OrderedNumbers_BestCaseSmallArray()
     {
-        int[] unOrderedNrs = RandomOrderedNumbers(1, 300, 10, 55);
+        int[] nrs = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         List<int> indexes = new List<int>();
-        int index = SearchAlgorithms.LinearSearch(unOrderedNrs, 10, 11, indexes);
+        int index = SearchAlgorithms.LinearSearch(nrs, 9, 1, indexes);
         Assert.That(index, Is.EqualTo(0));
         Assert.That(indexes.Count, Is.EqualTo(1));
         Assert.That(indexes[0], Is.EqualTo(0));
@@ -41,12 +41,12 @@ public class SearchingTests
     [Test]
     public void LinearSearch_UnorderedNumbers()
     {
-        int[] unOrderedNrs = RandomOrderedNumbers(1, 300, 100, 55);
+        int[] unOrderedNrs = RandomNumbers(1, 300, 100, 55);
         List<int> indexes = new List<int>();
         int index = SearchAlgorithms.LinearSearch(unOrderedNrs, 100, 133, indexes);
-        Assert.That(index, Is.EqualTo(45));
-        Assert.That(indexes.Count, Is.EqualTo(46));
-        for (int i=0; i<=45; i++)
+        Assert.That(index, Is.EqualTo(12));
+        Assert.That(indexes.Count, Is.EqualTo(13));
+        for (int i=0; i<=12; i++)
             Assert.That(i, Is.EqualTo(indexes[i]));
         TestContext.Out.WriteLine($"✅ LinearSearch ok");
     }
