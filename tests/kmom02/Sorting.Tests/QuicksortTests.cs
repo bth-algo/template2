@@ -33,9 +33,10 @@ public class QuicksortTests
     public void Quicksort_SameValueArray()
     {
         int[] sameValueArray = {5, 5, 5, 5};
-        SortingAlgorithms.Quicksort(sameValueArray, 0, sameValueArray.Length - 1);
+        SortingAlgorithms.Quicksort(sameValueArray, sameValueArray.Length);
 
         Assert.That(IsOrdered(sameValueArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Quicksort: same value in array");
     }
 
 
@@ -43,18 +44,20 @@ public class QuicksortTests
     public void Quicksort_ReversedOrderedArray_Sorted()
     {
         int[] revOrderedArray = {9, 8, 7, 6, 5, 4, 3, 2, 1};
-        SortingAlgorithms.Quicksort(revOrderedArray, 0, revOrderedArray.Length - 1);
+        SortingAlgorithms.Quicksort(revOrderedArray, revOrderedArray.Length);
 
         Assert.That(IsOrdered(revOrderedArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Quicksort: reversed ordered array");
     }
 
     [Test]
     public void Quicksort_orderedArray_Sorted()
     {
         int[] orderedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        SortingAlgorithms.Quicksort(orderedArray, 0, orderedArray.Length - 1);
+        SortingAlgorithms.Quicksort(orderedArray, orderedArray.Length);
 
         Assert.That(IsOrdered(orderedArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Quicksort: ordered array");
     }
 
 
@@ -63,14 +66,16 @@ public class QuicksortTests
     public void Quicksort_randomArray_Sorted()
     {
         int[] randomArray = {3, 5, 1, 7, 8, 2, 4, 6, 9};
-        SortingAlgorithms.Quicksort(randomArray, 0, randomArray.Length - 1);
+        SortingAlgorithms.Quicksort(randomArray, randomArray.Length);
         Assert.That(IsOrdered(randomArray), Is.True);
         shuffle(randomArray);
-        SortingAlgorithms.Quicksort(randomArray, 0, randomArray.Length - 1);
+        SortingAlgorithms.Quicksort(randomArray, randomArray.Length);
         Assert.That(IsOrdered(randomArray), Is.True);
         shuffle(randomArray);
-        SortingAlgorithms.Quicksort(randomArray, 0, randomArray.Length - 1);
+        SortingAlgorithms.Quicksort(randomArray, randomArray.Length);
         Assert.That(IsOrdered(randomArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Quicksort: random array");
+
     }
 
     [Test]
@@ -78,8 +83,9 @@ public class QuicksortTests
     {
         BusStop[] stops = {a, b, c, d};
         BusStop.ResetNrOfComparisons();
-        SortingAlgorithms.Quicksort(stops, 0, 3);
+        SortingAlgorithms.Quicksort(stops, 4);
         Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(6));
+        TestContext.Out.WriteLine($"✅ Quicksort: nr of comparisons ordered array");
     }
 
     
@@ -88,8 +94,9 @@ public class QuicksortTests
     {
         BusStop[] stops = {d, c, b, a};
         BusStop.ResetNrOfComparisons();
-        SortingAlgorithms.Quicksort(stops, 0, 3);
+        SortingAlgorithms.Quicksort(stops, 4);
         Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(6));
+        TestContext.Out.WriteLine($"✅ Quicksort: nr of comparisons reversed ordered array");
     }
 
 }

@@ -34,6 +34,7 @@ public class InsertionsortTests
         SortingAlgorithms.Insertionsort(sameValueArray, sameValueArray.Length);
 
         Assert.That(IsOrdered(sameValueArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Insertionsort: same value in array");
     }
 
 
@@ -44,6 +45,7 @@ public class InsertionsortTests
         SortingAlgorithms.Insertionsort(revOrderedArray, revOrderedArray.Length);
 
         Assert.That(IsOrdered(revOrderedArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Insertionsort: reversed ordered array");
     }
 
     [Test]
@@ -53,6 +55,7 @@ public class InsertionsortTests
         SortingAlgorithms.Insertionsort(orderedArray, orderedArray.Length);
 
         Assert.That(IsOrdered(orderedArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Insertionsort: ordered array");
     }
 
 
@@ -69,20 +72,17 @@ public class InsertionsortTests
         shuffle(randomArray);
         SortingAlgorithms.Insertionsort(randomArray, randomArray.Length);
         Assert.That(IsOrdered(randomArray), Is.True);
+        TestContext.Out.WriteLine($"✅ Insertionsort: random array");
     }
 
     [Test]
     public void Insertionsort_NrOfComparisons()
     {
-        /*BusStop d = new BusStop(23, "D");
-        BusStop b = new BusStop(11, "B");
-        BusStop a = new BusStop(23, "A");
-        BusStop c = new BusStop(23, "C");*/
-
         BusStop[] stops = {d, b, a, c };
         BusStop.ResetNrOfComparisons();
         SortingAlgorithms.Insertionsort(stops, 4);
         Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(5));
+        TestContext.Out.WriteLine($"✅ Insertionsort: nr of comparisons");
     }
 
     [Test]
@@ -92,6 +92,7 @@ public class InsertionsortTests
         BusStop.ResetNrOfComparisons();
         SortingAlgorithms.Insertionsort(stops, 4);
         Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(3));
+        TestContext.Out.WriteLine($"✅ Insertionsort: nr of comparisons ordered array");
     }
 
         [Test]
@@ -101,6 +102,7 @@ public class InsertionsortTests
         BusStop.ResetNrOfComparisons();
         SortingAlgorithms.Insertionsort(stops, 4);
         Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(6));
+        TestContext.Out.WriteLine($"✅ Insertionsort: nr of comparisons reversed ordered array");
     }
 
 }
