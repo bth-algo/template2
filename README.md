@@ -17,4 +17,4 @@ Skriv gärna ett kort stycke om dig själv (eller om ditt påhittade student-alt
 
 _Frivilligt_
 
-Skriv kort om du använt datastrukturer och algoritmer sedan tidigare i någon omfattning och vilka förväntningar du har på kursen och på databaser i ditt framtida yrkesliv.
+Skriv kort om du använt datastrukturer och algoritmer sedan tidigare i någon omfattning och vilka förväntningar du har på kursen och på algoritmer och datastrukturer i ditt framtida yrkesliv.
