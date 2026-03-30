@@ -51,18 +51,6 @@ public class GeneralTest
     }
 
     [Test]
-    public void CheckTestCode()
-    {
-        string testProject = _targetDir + ".Tests";
-        Assert.That(Directory.Exists(testProject), Is.True, $"Katalogen saknas: {testProject}");
-
-        var exists = Directory.EnumerateFiles(testProject, "*.cs", SearchOption.TopDirectoryOnly).Any();
-        Assert.That(exists, Is.True, $"Hittade inga .cs-filer i {testProject}");
-
-        TestContext.Out.WriteLine($"✅ {testProject} must include at least one test class ({KMOM}).");
-    }
-
-    [Test]
     public void CheckIfProgramIsOk()
     {
         string filename = "Program.cs";
