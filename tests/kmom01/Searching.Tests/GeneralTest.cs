@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 public class GeneralTest
 {
     private const string KMOM = "kmom01";
-    private string _testDirectory = "";
+    //private string _testDirectory = "";
     private string _targetDir = "";
 
     [OneTimeSetUp]
@@ -15,7 +15,7 @@ public class GeneralTest
     {
         var workflowDir = Environment.GetEnvironmentVariable("PROJECT_ROOT");
 
-        this._testDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "./";
+        //this._testDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "./";
         if (!string.IsNullOrEmpty(workflowDir))
         {
             // Körs i GitHub Actions
