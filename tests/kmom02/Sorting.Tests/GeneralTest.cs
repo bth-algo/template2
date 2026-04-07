@@ -94,7 +94,7 @@ public class GeneralTest
 
         Assert.Multiple(() =>
         {
-            Assert.That(content, Does.Contain("Ordnad array"), $"{filename} should contain Ordnad array.");
+            Assert.That(content, Does.Contain("Osorterad array"), $"{filename} should contain Ordnad array.");
             Assert.That(content, Does.Contain("Sorterad array"), $"{filename} should contain Sorterad array.");
             Assert.That(content, Does.Contain("Omvänt sorterad array"), $"{filename} should contain Omvänt sorterad array.");
             Assert.That(content, Does.Contain("Insertionsort"), $"{filename} should contain Insertionsort.");
