@@ -34,7 +34,8 @@ public class BusStopTestNrOfComparisons
         BusStop.ResetNrOfComparisons();
         busStopA.CompareTo(busStopB);
         busStopA.CompareTo(busStopB);
-        Assert.That(BusStop.ResetNrOfComparisons(), Is.EqualTo(0));
+        BusStop.ResetNrOfComparisons();
+        Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(0));
         TestContext.Out.WriteLine($"✅ BusStop: reset nr of comparisons");
     }
 }
