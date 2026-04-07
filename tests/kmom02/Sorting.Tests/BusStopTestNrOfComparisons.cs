@@ -10,7 +10,7 @@ public class BusStopTestNrOfComparisons
     }
 
     [Test]
-    public void Test1()
+    public void TestComparisons()
     {
         BusStop busStopA = new BusStop(11, "A", "aaa");
         BusStop busStopB = new BusStop(44, "B", "bbb");
@@ -22,5 +22,19 @@ public class BusStopTestNrOfComparisons
         busStopA.CompareTo(busStopB);
         Assert.That(BusStop.GetNrOfComparisons(), Is.EqualTo(2));
         TestContext.Out.WriteLine($"✅ BusStop: nr of comparisons");
+
+    }
+
+    [Test]
+    public void TestReset()
+    {
+        BusStop busStopA = new BusStop(11, "A", "aaa");
+        BusStop busStopB = new BusStop(44, "B", "bbb");
+
+        BusStop.ResetNrOfComparisons();
+        busStopA.CompareTo(busStopB);
+        busStopA.CompareTo(busStopB);
+        Assert.That(BusStop.ResetNrOfComparisons(), Is.EqualTo(0));
+        TestContext.Out.WriteLine($"✅ BusStop: reset nr of comparisons");
     }
 }
