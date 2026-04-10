@@ -70,7 +70,7 @@ public class GeneralTest
         Assert.Multiple(() =>
         {
             Assert.That(content, Does.Contain("using Sorting"), $"{filename} should contain using Sorting.");
-            Assert.That(content, Does.Contain("Insertionsort"), $"{filename} should contain Inserttionsort.");
+            Assert.That(content, Does.Contain("Insertionsort"), $"{filename} should contain Insertionsort.");
             Assert.That(content, Does.Contain("Quicksort"), $"{filename} should contain Quicksort.");
         });
 
