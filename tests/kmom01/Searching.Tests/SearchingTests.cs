@@ -90,7 +90,7 @@ public class SearchingTests
         Assert.That(index, Is.EqualTo(-1));
         Assert.That(indexes.Count == 10 || indexes.Count == 11, Is.True);
         int[] expectedIndexes = new int[]{511, 255, 127, 63, 31, 47, 39, 35, 37, 38};
-        for (int i=0; i<expectedIndexes.Count; i++)
+        for (int i=0; i<10; i++)
             Assert.That(expectedIndexes[i], Is.EqualTo(indexes[i]));
         TestContext.Out.WriteLine($"✅ BinarySearch worst case array");
     }
