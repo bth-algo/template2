@@ -70,8 +70,8 @@ public class GeneralTest
         Assert.Multiple(() =>
         {
             Assert.That(content, Does.Contain("using Sorting"), $"{filename} should contain using Sorting.");
-            Assert.That(content, Does.Contain("Insertionsort"), $"{filename} should contain LinearSearch.");
-            Assert.That(content, Does.Contain("Quicksort"), $"{filename} should contain BinarySearch.");
+            Assert.That(content, Does.Contain("Insertionsort"), $"{filename} should contain Inserttionsort.");
+            Assert.That(content, Does.Contain("Quicksort"), $"{filename} should contain Quicksort.");
         });
 
         TestContext.Out.WriteLine($"✅ {filename} använder rätt namespace och sorteringsmetoder ({KMOM}).");
