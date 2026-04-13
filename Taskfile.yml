@@ -240,22 +240,25 @@ tasks:
         # ── Tests ──────────────────────────────────────────────────────────────
         echo ""
         echo "Running tests for $KMOM ..."
-        mapfile -t TEST_PROJECTS < <(find tests -maxdepth 3 -type f -name '*Test*.csproj')
+        if [ -d tests/${KMOM} ]; then
+          mapfile -t TEST_PROJECTS < <(find tests/${KMOM} -maxdepth 2 -type f -name '*Test*.csproj')
 
-        if [[ ${#TEST_PROJECTS[@]} -eq 0 ]]; then
-          echo "⚠️  No test projects found in tests/*/"
-          exit 0
-        fi
-        for proj in "${TEST_PROJECTS[@]}"; do
-          dotnet build "$proj" --nologo
-          if ! dotnet test "$proj" --nologo; then
-              echo "❌ One or more tests failed for $KMOM."
-              ERRORS=$((ERRORS + 1))
-          else
-              echo "✅ All tests passed."
+          if [[ ${#TEST_PROJECTS[@]} -eq 0 ]]; then
+            echo "⚠️  No test projects found in tests/$KMOM/"
+            exit 0
           fi
-          echo ""
-        done
+
+          for proj in "${TEST_PROJECTS[@]}"; do
+            dotnet build "$proj" --nologo
+            if ! dotnet test "$proj" --nologo; then
+                echo "❌ One or more tests failed for $KMOM."
+                ERRORS=$((ERRORS + 1))
+            else
+                echo "✅ All tests passed."
+            fi
+            echo ""
+          done
+        fi
 
         # ── Summary ────────────────────────────────────────────────────────────
         echo ""
