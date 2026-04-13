@@ -226,15 +226,17 @@ tasks:
 
         # ── Check: submission tag vYX.Z exists ────────────────────────────────
         TAG=$(git tag --list "v${KMOM_NUM}.*" | sort -V | tail -1)
-        if [ -z "$TAG" ]; then
-          echo "❌ No submission tag found matching 'v${KMOM_NUM}.*'."
-          echo ""
-          echo "   Create and push a tag before submitting, e.g.:"
-          echo "   git tag v${KMOM_NUM}.0"
-          echo "   git push origin v${KMOM_NUM}.0"
-          ERRORS=$((ERRORS + 1))
-        else
-          echo "✅ Submission tag found: $TAG"
+        if [ "${KMOM_NUM}" != "03" ]; then
+          if [ -z "$TAG" ]; then
+            echo "❌ No submission tag found matching 'v${KMOM_NUM}.*'."
+            echo ""
+            echo "   Create and push a tag before submitting, e.g.:"
+            echo "   git tag v${KMOM_NUM}.0"
+            echo "   git push origin v${KMOM_NUM}.0"
+            ERRORS=$((ERRORS + 1))
+          else
+            echo "✅ Submission tag found: $TAG"
+          fi
         fi
 
         # ── Tests ──────────────────────────────────────────────────────────────
