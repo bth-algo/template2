@@ -224,7 +224,7 @@ tasks:
           echo "✅ No uncommitted changes."
         fi
 
-        # ── Check: submission tag v.YX.Z exists ────────────────────────────────
+        # ── Check: submission tag vYX.Z exists ────────────────────────────────
         TAG=$(git tag --list "v${KMOM_NUM}.*" | sort -V | tail -1)
         if [ -z "$TAG" ]; then
           echo "❌ No submission tag found matching 'v${KMOM_NUM}.*'."
