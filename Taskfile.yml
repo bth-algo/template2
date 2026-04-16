@@ -33,6 +33,14 @@ tasks:
     cmds:
       - rm -rf {{.ARTIFACT_TMP_FILES}}
 
+  download-example:
+    desc: "Replaces files in example/ with files from the artifact repository, {{.ARTIFACT_REPO}}"
+    cmds:
+      - task: download-artifacts
+      - cp -a {{.ARTIFACT_TMP_FILES}}/example/. example
+      - task: clear-artifacts
+      - echo "Files in example downloaded successfully."
+
   download-tests:
     desc: "Replaces files in tests/ with files from the artifact repository, {{.ARTIFACT_REPO}}"
     cmds:
