@@ -61,12 +61,7 @@ public class GeneralTest
             .Where(l => !string.IsNullOrWhiteSpace(l))
             .ToList();
 
-        Assert.Multiple(() =>
-        {
-            Assert.That(content, Does.Contain("using Heap"), $"{filename} should contain using Heap.");
-            //Assert.That(content, Does.Contain("new Heap<"), $"{filename} should contain new Heap.");
-            //Assert.That(content, Does.Contain("IHeap"), $"{filename} should contain declaration IHeap.");
-        });
+        Assert.That(content, Does.Contain("using Heap"), $"{filename} should contain using Heap.");
 
         TestContext.Out.WriteLine($"✅ {filename} har innehåll.");
     }
