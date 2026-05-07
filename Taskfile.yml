@@ -234,7 +234,7 @@ tasks:
 
         # ── Check: submission tag vYX.Z exists ────────────────────────────────
         TAG=$(git tag --list "v${KMOM_NUM}.*" | sort -V | tail -1)
-        if [ "${KMOM_NUM}" != "03" ]; then
+        if [ "${KMOM_NUM}" != "03" ] && [ "${KMOM_NUM}" != "06" ]; then
           if [ -z "$TAG" ]; then
             echo "❌ No submission tag found matching 'v${KMOM_NUM}.*'."
             echo ""
