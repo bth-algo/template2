@@ -40,7 +40,7 @@ public class GeneralTest
             "HashTable.cs",
             "IGraph.cs",
             "IGraph.cs",
-            "GraphUI.cs"
+            "GraphHandler.cs"
         };
 
         foreach (var file in requiredFiles)
