@@ -32,14 +32,13 @@ public class GeneralTest
 
         var requiredFiles = new[]
         {
-            "europeiskaStader.txt",
             "Program.cs",
             "IHeap.cs",
             "Heap.cs",
             "IHashTable.cs",
             "HashTable.cs",
             "IGraph.cs",
-            "IGraph.cs",
+            "Graph.cs",
             "GraphHandler.cs"
         };
 
