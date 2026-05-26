@@ -97,7 +97,7 @@ public class GeneralTest
         TestContext.Out.WriteLine($"✅ {filename} innehåller rätt metoddeklarationer ({KMOM}).");
     }
 
-        [Test]
+    [Test]
     public void CheckIfIHashTableIsOk()
     {
         string filename = "IHashTable.cs";
@@ -141,13 +141,13 @@ public class GeneralTest
 
         Assert.Multiple(() =>
         {
-            Assert.That(content, Does.Contain("void AddEdge(T fromVertex, T toVertex, int weight)"), $"{filename} should contain void Insert(T item).");
-            Assert.That(content, Does.Contain("bool RemoveEdge(T fromvertex, T tovertex)"), $"{filename} should contain T Remove().");
-            Assert.That(content, Does.Contain("int GetWeight(T fromvertex, T tovertex)"), $"{filename} should contain T Peek().");
-            Assert.That(content, Does.Contain("int GetNrOfVerticies()"), $"{filename} should contain int Size().");
-            Assert.That(content, Does.Contain("List<T> GetAllVerticies()"), $"{filename} should contain T[] GetAllElements().");
-            Assert.That(content, Does.Contain("int GetTotalWeight()"), $"{filename} should contain declaration IComparable.");
-            Assert.That(content, Does.Contain("(int, List<(T, int)>) GetShortestPath(T fromvertex, T tovertex)"), $"{filename} should contain declaration IComparable.");
+            Assert.That(content, Does.Contain("void AddEdge(T fromVertex, T toVertex, int weight)"), $"{filename} should contain void AddEdge(T fromVertex, T toVertex, int weight).");
+            Assert.That(content, Does.Contain("bool RemoveEdge(T fromvertex, T tovertex)"), $"{filename} should contain bool RemoveEdge(T fromvertex, T tovertex).");
+            Assert.That(content, Does.Contain("int GetWeight(T fromvertex, T tovertex)"), $"{filename} should contain int GetWeight(T fromvertex, T tovertex).");
+            Assert.That(content, Does.Contain("int GetNrOfVerticies()"), $"{filename} should contain int GetNrOfVerticies().");
+            Assert.That(content, Does.Contain("List<T> GetAllVerticies()"), $"{filename} should contain List<T> GetAllVerticies().");
+            Assert.That(content, Does.Contain("int GetTotalWeight()"), $"{filename} should contain int GetTotalWeight().");
+            Assert.That(content, Does.Contain("(int, List<(T, int)>) GetShortestPath(T fromvertex, T tovertex)"), $"{filename} should contain (int, List<(T, int)>) GetShortestPath(T fromvertex, T tovertex).");
         });
 
         TestContext.Out.WriteLine($"✅ {filename} innehåller rätt metoddeklarationer ({KMOM}).");
