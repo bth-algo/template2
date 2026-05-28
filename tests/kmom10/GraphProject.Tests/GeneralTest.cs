@@ -152,4 +152,14 @@ public class GeneralTest
 
         TestContext.Out.WriteLine($"✅ {filename} innehåller rätt metoddeklarationer ({KMOM}).");
     }
+
+    [Test]
+    public void CheckIfIDefaultConstructorIsOk()
+    {
+        var ctor = typeof(Graph.Graph<int>).GetConstructor(Type.EmptyTypes);
+
+        Assert.That(ctor, Is.Not.Null, "Graph should have a default constructor.");
+
+        TestContext.Out.WriteLine($"✅ Din klass Graph har en defaultkonstruktor utan inparametrar.");
+    }
 }
