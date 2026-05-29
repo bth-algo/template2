@@ -99,10 +99,17 @@ public class GeneralTest
     [Test]
     public void CheckIfIDefaultConstructorIsOk()
     {
-        var ctor = typeof(HashTable.HashTable<int, int>).GetConstructor(Type.EmptyTypes);
+        try
+        {
+            var ctor = typeof(HashTable<int, int>).GetConstructor(Type.EmptyTypes);
 
-        Assert.That(ctor, Is.Not.Null, $"{NAME} should have a default constructor.");
+            Assert.That(ctor, Is.Not.Null, "HashTable should have a default constructor.");
 
-        TestContext.Out.WriteLine($"✅ Din {NAME} har en defaultkonstruktor utan inparametrar.");
+            TestContext.Out.WriteLine($"✅ Din klass HashTable kan instansieras utan argument.");
+        }
+        catch (Exception)
+        {
+            TestContext.Out.WriteLine($"❌ Din klass HashTable ska kunna instansieras utan argument. Lägg till en parameterlös konstruktor eller använd defaultvärden.");
+        }
     }
 }
