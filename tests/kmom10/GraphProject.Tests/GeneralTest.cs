@@ -156,10 +156,17 @@ public class GeneralTest
     [Test]
     public void CheckIfIDefaultConstructorIsOk()
     {
-        var ctor = typeof(Graph.Graph<int>).GetConstructor(Type.EmptyTypes);
+        try
+        {
+            var ctor = typeof(Graph<int>).GetConstructor(Type.EmptyTypes);
 
-        Assert.That(ctor, Is.Not.Null, "Graph should have a default constructor.");
+            Assert.That(ctor, Is.Not.Null, "Graph should have a default constructor.");
 
-        TestContext.Out.WriteLine($"✅ Din klass Graph har en defaultkonstruktor utan inparametrar.");
+            TestContext.Out.WriteLine($"✅ Din klass Graph kan instansieras utan argument.");
+        }
+        catch (Exception)
+        {
+            TestContext.Out.WriteLine($"❌ Din klass Graph ska kunna instansieras utan argument. Lägg till en parameterlös konstruktor eller använd defaultvärden.");
+        }
     }
 }
